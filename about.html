@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>About | Aman Sharma</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Importing the Font-->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Lobster" rel="stylesheet">
+
+  <!-- Icon -->
+  <link rel="icon" type="img/ico" href="Images/Icon.png"/>
+  <!-- Css sheet -->
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <!-- JS -->
+  <script src="magic.js"></script>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body id = "myPage2">
+
+
+  <div class="flex-container">
+
+    <div id ="homeCol">
+      <a href = "main.html">
+        <h3 style = "font-size: 2em">Home</h3>
+      </a>
+    </div>
+
+    <div id = "leftCol">
+      <h1 style = "font-size: 5.5em">About</h1>
+      <ul>
+        <li><a href = "#midCol_me">Me</a></li>
+        <li><a href = "#midCol_me">Resume</a></li>
+      </ul>
+    </div>
+
+    <div id = "midCol" data-spy="scroll" data-target="#aboutnav">
+
+      <div class="midCol_pic">
+        <img src="Images/me_portugal_small.jpg" alt="Portugal">
+      </div>
+
+      <div id = "midCol_me">
+
+        <h1 style = "font-weight: normal"> hello </h1>
+
+        <p style = "font-weight: 400">
+          Welcome to my website. I decided to make this website while I was searching for my very first adult job. I figured, why not teach myself something new while having to rewrite everything from my resume in to a job application after uploading it. At first, I thought it would be easy, I mean it's only HTML but, then I learned about CSS, and then I learned about JavaScript, and then I learned about libraries such as Bootstrap and jQuery, and the list goes on. But, I was glad I started the project as it was a very nice distraction from feeling poor.</p>
+
+          <h1 style = "font-weight: normal" id = "aboutH2">about me</h1>
+
+          <p style = "font-weight: 400">
+            I was born in India and lived there till I was 12 and spent the rest of the time in the USA. I have also lived in Germany, Sweden, and Finland as part of my studies. I love traveling, learning new languages, cars, space, kebabs <span href = "#kebab"> (see my kebab map) </span>, and just learning new things, in general.
+
+          </p>
+
+        </div>
+
+        <div style = "background-color: white" id = "midCol_resume">
+          <h1 style = "text-align: center"> Résumé </h1>
+        </div>
+
+      </div>
+
+      <div id ="travelCol">
+        <a href = "main.html">
+          <h3 style = "font-size: 2em">Travel</h3>
+        </a>
+      </div>
+
+    </div>
+
+
+    <script>
+    $(document).ready(function(){
+      //Add smooth scrolling to all links in navbar + footer link
+      $("#leftCol a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+
+    </script>
+
+  </body>
+  </html>
