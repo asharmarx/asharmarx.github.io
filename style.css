@@ -53,6 +53,8 @@ body::-webkit-scrollbar {
   color: white;
 }
 
+/* About Container */
+
 #about {
   text-align: center;
   padding: 0;
@@ -61,8 +63,7 @@ body::-webkit-scrollbar {
   height: 90%;
   min-height: 90%;
   overflow: scroll;
-  /* background-color: #D96D5F; */
-  background-color: #1D2135
+  background-color: #1D2135;
   /* #0E1226 #1D2135 */
 }
 
