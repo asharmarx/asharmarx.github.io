@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
   min-height: 85%;
   height: 85%;
   /* Image Credit: NASA */
-  background-image: url("Images/PIA12348_large.jpg");
+  background-image: url("Images/PIA12348_large_edited.jpg");
   background-position: center;
 }
 
@@ -61,7 +61,9 @@ body::-webkit-scrollbar {
   height: 90%;
   min-height: 90%;
   overflow: scroll;
-  background-color: #D96D5F;
+  /* background-color: #D96D5F; */
+  background-color: #1D2135
+  /* #0E1226 #1D2135 */
 }
 
 #about > a {
