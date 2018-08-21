@@ -67,19 +67,35 @@ body::-webkit-scrollbar {
   /* #0E1226 #1D2135 */
 }
 
-#about > a {
+#about > h1 {
   display: block;
   color: white;
   font-family: 'Great Vibes', cursive;
   margin-top: 20%;
   padding: 0;
-  text-decoration: none;
-
 }
 
-#about > a.hover {
-  text-decoration: none;
+#about_des{
+  opacity: 0;
+  color: white;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15pt;
+  margin-left: 5%;
+  margin-right: 60%;
+  margin-top: -15%;
+  -webkit-transition: 1s linear;
+  transition: 1s;
 }
+
+#about >h1:hover #about_des {
+  opacity: 1;
+}
+
+/* #about > a.hover #about2{
+  text-decoration: none;
+  display: block;
+} */
 
 /* About HTML File */
 
