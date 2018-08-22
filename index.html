@@ -68,8 +68,8 @@
 
   <!-- Home Cotainer -->
 <div id = "home" class = "container-fluid text-center">
-        <h1 id = "first">Aman Sharma</h1>
-        <h1 id = "second">
+        <h1 class = "homeText" id = "first">Aman Sharma</h1>
+        <h1 class = "homeText" id = "second">
           <span class="txt-rotate"
           data-period="2000"
           data-rotate='[ "Engineer.", "Explorer.", "Elephant."]'>
@@ -77,96 +77,28 @@
       </h1>
 </div>
 
-
-<!-- About Container -->
-<div id = "about"  class = "container-fluid row">
-    <div class="column left_a">
-      <img src="Images/left.jpg" alt="left">
+<div class="container-fluid row" id = "about">
+  <div class="column left_about">
+    <img src="Images/left_1.jpg" alt="">
       <div class="overlay">
-        <div class="about_text" style = "font-weight: 200">
-        Welcome to my website. I decided to make this website while I was searching (and still am) for my very first adult job. After rewriting my resume for the googleplexth time on to a website after just uploading it, I thought, "I am gonna teach myself something new." At first, I thought it would be easy, I mean it's only HTML, but then I learned about CSS, and then I learned about JavaScript, and then I learned about libraries such as Bootstrap and jQuery, and the list goes on. But, I was glad I started the project as it was a very nice distraction from feeling poor. But as Calvin's dad said, "Being misrable builds character" (if you don't get that reference, it's from Calvin and Hobbes)
+        <div class="about_text">
+          Welcome to my website. I decided to make this website while I was searching (and still am) for my very first adult job. After rewriting my resume for the googleplexth time on to a website after just uploading it, I thought, "I am gonna teach myself something new." At first, I thought it would be easy, I mean it's only HTML, but then I learned about CSS, and then I learned about JavaScript, and then I learned about libraries such as Bootstrap and jQuery, and the list goes on. But, I was glad I started the project as it was a very nice distraction from feeling poor. But as Calvin's dad said, "Being misrable builds character" (if you don't get that reference, it's from Calvin and Hobbes)
+        </div>
+
       </div>
-      </div>
-    </div>
+  </div>
 
-    <div class="column right_a">
-      <img src="Images/right.jpg" alt="right">
-    </div>
-
-
-    <!-- <div class="overlay">
-      <p class="about_text" style = "font-weight: 400">
+  <div class="column right_about">
+    <img src="Images/right.jpg" alt="">
+    <div class="overlay">
+      <div class="about_text">
         I was born in India and lived there till I was 12 and then my family decided to move to USA, more specifically to Pinetop, Arizona. If you don't know where that is it's probably a good thing. I got my bachelor's from Arizona State University and for my master's I went to Europe.
         During my studies I got to live in Germany, Sweden, and Finland over the course of two years. While there, I developed this obsession with languages and how they are all connected (except Finnish, trust me I tried learning it). I was blown away by the fact that my native language, Hindi, is in the same language family as Swedish. Well, they are more like distant cousins that don't ever talk, but related nonetheless.
-
-      </p>
-
-    </div> -->
-
-
-</div>
-
-
-<!-- Travel Container -->
-<div id = "travel" class = "container-fluid">
-  <div id = "myHorse" class = "carousel slide" data-ride = "carousel">
-    <!-- Indicators -->
-    <ol class = "carousel-indicators">
-      <li data-target = "#myHorse" data-slide-to = "0" class = "active"> </li>
-      <li data-target = "#myHorse" data-slide-to = "1"> </li>
-      <li data-target = "#myHorse" data-slide-to = "2"> </li>
-      <li data-target = "#myHorse" data-slide-to = "3"> </li>
-      <li data-target = "#myHorse" data-slide-to = "4"> </li>
-
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class = "carousel-inner" role = "listbox" >
-
-      <div class = "item active">
-        <img src="Images/car_de.jpg"  alt="Germany" height="768" width="1024">
-
-        <div class = "carousel-caption">
-          <h2> Wasserberndorf, Germany </h2>
-        </div>
-
-      </div>
-
-      <div class = "item">
-        <img src="Images/car_stp.jpg" alt="Russia" height="768" width="1024">
-        <div class = "carousel-caption">
-          <h2> St. Petersburg, Russia </h2>
-        </div>
-      </div>
-
-      <div class = "item">
-        <img src="Images/sunset_es.jpg" alt="Spain" height="768" width="1024">
-        <div class = "carousel-caption">
-          <h2> L'Albufera, Valencia, Spain </h2>
-        </div>
-      </div>
-
-      <div class = "item">
-        <img src="Images/me_portugal.jpg" alt="Portugal" height="768" width="1024">
-        <div class = "carousel-caption">
-          <h2> Porto, Portugal </h2>
-        </div>
       </div>
 
     </div>
-
-    <a class="left carousel-control" href="#myHorse" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-
-    <a class="right carousel-control" href="#myHorse" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
 </div>
-
 
 </body>
 
