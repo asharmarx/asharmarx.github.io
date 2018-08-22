@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
 
 .column{
   position: fixed;
-  padding: 0px;
+  padding: 0;
   width: 50%;
   height: 85%;
   overflow-x: hidden;
@@ -118,6 +118,7 @@ body::-webkit-scrollbar {
   right: -10%;
   text-align: left;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 
 }
@@ -132,7 +133,7 @@ body::-webkit-scrollbar {
 }
 
 
-.button{
+.viewButton{
   position: relative;
   display: inline-block;
   top: 50px;
@@ -149,11 +150,11 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-.button:link{
+.viewButton:link{
   text-decoration: none;
 }
 
-.button:hover {
+.viewButton:hover {
   background-color: #FF6342;
   color: white;
 }
