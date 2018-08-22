@@ -68,12 +68,12 @@ body::-webkit-scrollbar {
   background-color: white;
 }
 
-.left_about{
+.leftAbout{
   left: 0;
   position: absolute;
 }
 
-.right_about{
+.rightAbout{
   right: 0;
   position: absolute;
 }
@@ -100,15 +100,15 @@ body::-webkit-scrollbar {
   background-color: #0E1226;
 }
 
-.left_about:hover .overlay {
+.leftAbout:hover .overlay {
   opacity: 1;
 }
 
-.right_about:hover .overlay{
+.rightAbout:hover .overlay{
   opacity: 1;
 }
 
-.about_text {
+.aboutText {
   font-family: 'Raleway', sans-serif;
   color: white;
   font-size: 20px;
@@ -116,15 +116,27 @@ body::-webkit-scrollbar {
   top: 42%;
   left: 45%;
   right: -10%;
-  text-align: center;
+  text-align: left;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+
 }
+
+.rightAbout > .overlay > .aboutText{
+  left: 50%;
+  right: -10%;
+}
+
+.rightAbout > .overlay{
+  background-color: #1c2135;
+}
+
 
 .button{
   position: relative;
   display: inline-block;
   top: 50px;
+  left: 30%;
   padding: 15px;
   background-color: #0E1226;
   border: 2px solid white;
@@ -133,6 +145,8 @@ body::-webkit-scrollbar {
   -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     border-radius: 12px;
+    width: 200px;
+  text-align: center;
 }
 
 .button:link{
