@@ -122,7 +122,26 @@ body::-webkit-scrollbar {
 }
 
 .button{
-  background-color:
+  position: relative;
+  display: inline-block;
+  top: 50px;
+  padding: 15px;
+  background-color: #0E1226;
+  border: 2px solid white;
+  text-decoration: none;
+  color: white;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border-radius: 12px;
+}
+
+.button:link{
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #FF6342;
+  color: white;
 }
 
 
