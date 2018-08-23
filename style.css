@@ -71,11 +71,14 @@ body::-webkit-scrollbar {
 .leftAbout{
   left: 0;
   position: absolute;
+  background-color: #1c2135;
 }
 
 .rightAbout{
   right: 0;
   position: absolute;
+  background-color: #0E1226;
+
 }
 
 .centered {
@@ -111,16 +114,25 @@ body::-webkit-scrollbar {
 .aboutText {
   font-family: 'Raleway', sans-serif;
   color: white;
-  font-size: 20px;
+  font-size: 1.2em;
   position: absolute;
-  top: 42%;
+  top: 55%;
   left: 45%;
   right: -10%;
   text-align: left;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
 
+.aboutText > .text-center{
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8em;
+  font-family: 'Great Vibes', cursive;
+  color: white;
 }
 
 .rightAbout > .overlay > .aboutText{
@@ -138,7 +150,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   top: 50px;
   left: 30%;
-  padding: 15px;
+  padding: 10px;
   background-color: #0E1226;
   border: 2px solid white;
   text-decoration: none;
@@ -146,8 +158,9 @@ body::-webkit-scrollbar {
   -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     border-radius: 12px;
-    width: 200px;
+    width: 150px;
   text-align: center;
+  font-size: 1em;
 }
 
 .viewButton:link{
