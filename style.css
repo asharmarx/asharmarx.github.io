@@ -50,6 +50,8 @@ body::-webkit-scrollbar {
 
 }
 
+/* About */
+
 #about {
   margin: 0;
   padding: 0;
@@ -65,7 +67,6 @@ body::-webkit-scrollbar {
   overflow-x: hidden;
   z-index: 1;
   top: 85%;
-  background-color: white;
 }
 
 .leftAbout{
@@ -78,7 +79,6 @@ body::-webkit-scrollbar {
   right: 0;
   position: absolute;
   background-color: #0E1226;
-
 }
 
 .centered {
@@ -90,17 +90,23 @@ body::-webkit-scrollbar {
     font-family: 'Great Vibes', cursive;
     color: white;
 }
+
 .overlay {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 681px;
-  width: 720px;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
   opacity: 0;
-  transition: .5s ease;
+  transition: 1.2s ease;
   background-color: #0E1226;
+}
+
+.rightAbout > .overlay{
+  background-color: #1c2135;
 }
 
 .leftAbout:hover .overlay {
@@ -140,27 +146,25 @@ body::-webkit-scrollbar {
   right: -10%;
 }
 
-.rightAbout > .overlay{
-  background-color: #1c2135;
-}
-
-
 .viewButton{
   position: relative;
   display: inline-block;
   top: 50px;
   left: 30%;
   padding: 10px;
-  background-color: #0E1226;
   border: 2px solid white;
   text-decoration: none;
   color: white;
-  -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
+  -webkit-transition-duration: 0.5s;
+    transition-duration: 0.5s;
     border-radius: 12px;
     width: 150px;
   text-align: center;
   font-size: 1em;
+}
+
+.rightAbout > .viewButton{
+  background-color: #1c2135;
 }
 
 .viewButton:link{
@@ -168,10 +172,48 @@ body::-webkit-scrollbar {
 }
 
 .viewButton:hover {
-  background-color: #FF6342;
+  background-color: #F0AD64;
   color: white;
 }
 
+.viewButton:visited{
+  text-decoration: none;
+}
+
+#contact{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 95%;
+  background-image: linear-gradient(-30deg,#327370, #1c2135,#0E1226);
+  /* background-color: #1D2135; */
+}
+
+.contactColumnleft{
+  position: relative;
+  display: block;
+  background-color: rgba(14,18,38, 0.1);
+  height: 75%;
+  width: 60%;
+  top: 10%;
+  left: 20%;
+  border: 1px solid;
+}
+
+.contactColumnleft > .text-center h1{
+  color: white;
+  font-family: 'Great Vibes', cursive;
+  font-size: 5em;
+  margin-top: 30px;
+}
+
+.contactInfo{
+  color: white;
+  font-size: 1.5em;
+  position: relative;
+  top: 30%;
+  font-weight: lighter;
+}
 
 /* Navbar */
 
