@@ -82,13 +82,13 @@ body::-webkit-scrollbar {
 }
 
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 8em;
-    font-family: 'Great Vibes', cursive;
-    color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8em;
+  font-family: 'Great Vibes', cursive;
+  color: white;
 }
 
 .overlay {
@@ -120,7 +120,7 @@ body::-webkit-scrollbar {
 .aboutText {
   font-family: 'Raleway', sans-serif;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.5rem;
   position: absolute;
   top: 55%;
   left: 45%;
@@ -185,8 +185,7 @@ body::-webkit-scrollbar {
   padding: 0;
   width: 100%;
   height: 95%;
-  background-image: linear-gradient(-30deg,#327370, #1c2135,#0E1226);
-  /* background-color: #1D2135; */
+  background-color: #0E1226;
 }
 
 .contactColumnleft{
