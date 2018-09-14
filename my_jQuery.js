@@ -21,30 +21,4 @@ $(document).ready(function(){
       });
     } // End if
   });
-
-  // Fade Out About container when Home is clicked
-//   $("#flip, .navbar-brand").on("click", function(e) {
-//       e.preventDefault();
-//       var targetOne = $(this).attr("href");
-//       $(targetOne).fadeIn("slow");
-//       $("#about").fadeOut("fast");
-//       // $("#flip").addClass("active");
-//
-//   });
-//
-//   // Fade Out Home container when About is clicked
-//
-//   $("#flop").on("click", function(g) {
-//       g.preventDefault();
-//       var targetTwo = $(this).attr("href");
-//       $(targetTwo).fadeIn("slow");
-//       $("#home").fadeOut("fast");
-//
-//   });
-//
-//   // Activate the correct Navbar Icon
-//   $( '.navbar-nav a, .navbar-brand' ).on( 'click', function () {
-// 	   $( '.navbar-nav' ).find( 'li.active' ).removeClass( 'active' );
-// 	    $( this ).parent( 'li' ).addClass( 'active' );
-// });
 })
