@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
   width: 100%;
   min-height: 85%;
   height: 85%;
-  background-color: #0E1226;
+  background-color: black;
 }
 
 #first{
@@ -47,7 +47,6 @@ body::-webkit-scrollbar {
   padding: 0;
   font-family: 'Great Vibes', cursive;
   color: white;
-
 }
 
 /* About */
@@ -72,13 +71,13 @@ body::-webkit-scrollbar {
 .leftAbout{
   left: 0;
   position: absolute;
-  background-color: #1c2135;
+  background-color: #EBEBEB;
 }
 
 .rightAbout{
   right: 0;
   position: absolute;
-  background-color: #0E1226;
+  background-color: black;
 }
 
 .centered {
@@ -88,7 +87,14 @@ body::-webkit-scrollbar {
   transform: translate(-50%, -50%);
   font-size: 8em;
   font-family: 'Great Vibes', cursive;
+}
+
+.rightAbout > .centered {
   color: white;
+}
+
+.leftAbout > .centered {
+  color: black;
 }
 
 .overlay {
@@ -102,11 +108,14 @@ body::-webkit-scrollbar {
   width: 100%;
   opacity: 0;
   transition: 1.2s ease;
-  background-color: #0E1226;
+}
+
+.leftAbout > .overlay{
+  background-color: black;
 }
 
 .rightAbout > .overlay{
-  background-color: #1c2135;
+  background-color: #EBEBEB;
 }
 
 .leftAbout:hover .overlay {
@@ -138,12 +147,11 @@ body::-webkit-scrollbar {
   transform: translate(-50%, -50%);
   font-size: 8em;
   font-family: 'Great Vibes', cursive;
-  color: white;
 }
 
 .rightAbout > .overlay > .aboutText{
-  left: 50%;
   right: -10%;
+  color: black;
 }
 
 .viewButton{
@@ -152,9 +160,7 @@ body::-webkit-scrollbar {
   top: 50px;
   left: 30%;
   padding: 10px;
-  border: 2px solid white;
   text-decoration: none;
-  color: white;
   -webkit-transition-duration: 0.5s;
     transition-duration: 0.5s;
     border-radius: 12px;
@@ -163,8 +169,14 @@ body::-webkit-scrollbar {
   font-size: 1em;
 }
 
-.rightAbout > .viewButton{
-  background-color: #1c2135;
+.rightAbout .viewButton{
+  color: black;
+  border: 2px solid black;
+}
+
+.leftAbout .viewButton{
+  border: 2px solid #EBEBEB;
+  color: #EBEBEB;
 }
 
 .viewButton:link{
