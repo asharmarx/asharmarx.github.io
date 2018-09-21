@@ -25,6 +25,7 @@
   <!-- JS -->
   <script src="magic.js"></script>
 
+
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -126,15 +127,178 @@
 </div>
 
 <div id = "contact" class="container-fluid text-center">
-  <div class="contactColumnleft">
-    <div class="text-center">
-      <h1>Who, Me?</h1>
-    </div>
-    <div class="contactInfo">
+  <script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
+		<script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
 
-    </div>
-  </div>
-</div>
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+			AmCharts.makeChart("map",{
+					"type": "map",
+					"pathToImages": "http://www.amcharts.com/lib/3/images/",
+					"addClassNames": true,
+					"fontSize": 15,
+					"color": "#000000",
+					"projection": "eckert3",
+					"backgroundAlpha": 1,
+					"backgroundColor": "rgba(205,205,205,1)",
+					"dataProvider": {
+						"map": "worldLow",
+						"getAreasFromMap": true,
+						"areas": [
+							{
+								"id": "AT",
+								"title": "Austria",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "BE",
+								"title": "Belgium",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "CZ",
+								"title": "Czech Republic",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "DE",
+								"title": "Germany",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "DK",
+								"title": "Denmark",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "EE",
+								"title": "Estonia",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "ES",
+								"title": "Spain",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "FI",
+								"title": "Finland",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "FR",
+								"title": "France",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "IT",
+								"title": "Italy",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "LV",
+								"title": "Latvia",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "NL",
+								"title": "Netherlands",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "NO",
+								"title": "Norway",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "PL",
+								"title": "Poland",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "PT",
+								"title": "Portugal",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "RU",
+								"title": "Russia",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "SE",
+								"title": "Sweden",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "SI",
+								"title": "Slovenia",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "SK",
+								"title": "Slovakia",
+								"color": "rgba(235,235,235,1)"
+							},
+							{
+								"id": "US",
+								"title": "United States",
+								"color": "rgba(235,235,235,1)"
+							}
+						]
+					},
+					"balloon": {
+						"horizontalPadding": 15,
+						"borderAlpha": 0,
+						"borderThickness": 1,
+						"verticalPadding": 15
+					},
+					"areasSettings": {
+						"color": "rgba(9,9,9,1)",
+						"outlineColor": "rgba(205,205,205,1)",
+						"rollOverOutlineColor": "rgba(205,205,205,1)",
+						"rollOverBrightness": 20,
+						"selectedBrightness": 20,
+						"selectable": true,
+						"unlistedAreasAlpha": 0,
+						"unlistedAreasOutlineAlpha": 0
+					},
+					"imagesSettings": {
+						"alpha": 1,
+						"color": "rgba(9,9,9,1)",
+						"outlineAlpha": 0,
+						"rollOverOutlineAlpha": 0,
+						"outlineColor": "rgba(205,205,205,1)",
+						"rollOverBrightness": 20,
+						"selectedBrightness": 20,
+						"selectable": true
+					},
+					"linesSettings": {
+						"color": "rgba(9,9,9,1)",
+						"selectable": true,
+						"rollOverBrightness": 20,
+						"selectedBrightness": 20
+					},
+					"zoomControl": {
+						"zoomControlEnabled": true,
+						"homeButtonEnabled": true,
+						"panControlEnabled": false,
+						"right": 38,
+						"bottom": 30,
+						"minZoomLevel": 0.85,
+						"gridHeight": 100,
+						"gridAlpha": 0.1,
+						"gridBackgroundAlpha": 0,
+						"gridColor": "#FFFFFF",
+						"draggerAlpha": 1,
+						"buttonCornerRadius": 2
+					}
+				});
+		</script>
+
+    <div id="map" style="width: 100%; height: 803px;"></div>
+
+<div>
 
 </body>
 
