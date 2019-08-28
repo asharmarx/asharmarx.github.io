@@ -165,7 +165,7 @@
 		-moz-animation: none;
 		-webkit-animation: none;
 		-ms-animation: none;
-		animation: none; 
+		animation: none;
 		-moz-backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
 		-ms-backface-visibility: hidden;
@@ -174,28 +174,15 @@
 		-webkit-transform: translate3d(0,0,0);
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
-		
+
 		/* background */
-		background:
-			linear-gradient(
-			limegreen,
-			transparent
-		),
-		linear-gradient(
-			90deg,
-			skyblue,
-			transparent
-		),
-		linear-gradient(
-			-90deg,
-			coral,
-			transparent
-		);
+		background: black;
+		
 		background-blend-mode: screen;
 		width: 100%;
 		height: 100%;
 	}
-	
+
 	@-moz-keyframes bg {
 		0% {
 			-moz-transform: translate3d(0,0,0);
