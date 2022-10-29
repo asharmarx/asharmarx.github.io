@@ -1,17 +1,19 @@
-import { useAtom } from "jotai";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/globalStyles";
 import { lightTheme, darkTheme } from "./themes/theme";
-import { appTheme as atAtom } from "./atoms/appAtoms";
 import ThemeButton from "./components/themeButton.jsx";
 import HomePage from "./components/homePage.jsx";
 import WhatIRead from "./components/whatIRead";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/navBar";
 import WhatIHaveDone from "./components/whatIHaveDone";
+import { useState } from "react";
 
 const App = () => {
-  const [appTheme, setAppTheme] = useAtom(atAtom);
+  const [appTheme, setAppTheme] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
   const toggleTheme = () => (appTheme ? setAppTheme(false) : setAppTheme(true));
   return (
     <ThemeProvider theme={appTheme ? darkTheme : lightTheme}>
