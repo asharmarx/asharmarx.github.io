@@ -1,13 +1,32 @@
-import whatIHaveDone from '../whatihavedone.js'
+import { useState, useEffect } from "react";
 
-const WhatIHaveDone = () =>   whatIHaveDone.map((wIHD) => (
-    <span key={wIHD.id}>
-      <h1>{wIHD.title}</h1>
-      <div className='d-flex'>
-        <img src='' alt={wIHD.title} />
-        <p>{wIHD.description}</p>
-      </div>
-    </span>
-  ));
+const WhatIHaveDone = () => {
+    const [whatIHaveDone, setWhatIHaveDone] = useState([]);
+    useEffect(() => {
+      fetch("http://34.139.38.27/what-i-have-done")
+      .then((response) => { 
+        if (response.ok) {
+        return response.json();
+      }
+      throw response;
+    })
+    .then((data) => {
+        setWhatIHaveDone(data.whatIHaveDone);
+    })
+    .catch((err) => console.error(`the error is ${err}`))
+    }, [])
+    if (!whatIHaveDone.length) {
+      return null;
+    }
+    return (
+        whatIHaveDone.map((wIHD) => (
+        <span key={wIHD.id}>
+        <h1>{wIHD.title}</h1>
+        <div className='d-flex'>
+            <img src='' alt={wIHD.title} />
+            <p>{wIHD.description}</p>
+        </div>
+        </span>
+  )))};
 
   export default WhatIHaveDone;
