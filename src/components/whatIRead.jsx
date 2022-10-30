@@ -1,5 +1,4 @@
-import React from "react";
-import whatIRead from "../whatiread";
+import { useState, useEffect } from "react";
 import { SeeAlsoWrapper } from "../styles/myStyles";
 
 const Resources = ({ resources, topicID }) => {
@@ -21,7 +20,25 @@ const SeeAlso = ({ seeAlso, topicID}) => {
         </SeeAlsoWrapper>
     )
 }
-const WhatIRead = () =>
+const WhatIRead = () => {
+  const [whatIRead, setWhatIRead] = useState([]);
+  useEffect(() => {
+    fetch("http://34.139.38.27/what-i-read")
+    .then((response) => { 
+      if (response.ok) {
+      return response.json();
+    }
+    throw response;
+  })
+  .then((data) => {
+    setWhatIRead(data.whatIRead);
+  })
+  .catch((err) => console.error(`the error is ${err}`))
+  }, []);
+  if (!whatIRead.length) {
+    return null;
+  }
+  return (
   whatIRead.map((wIR) => (
     <span key={wIR.id}>
       <h1>{wIR.title}</h1>
@@ -30,6 +47,6 @@ const WhatIRead = () =>
       <br />
       {wIR.seeAlso?.length ? <SeeAlso seeAlso={wIR.seeAlso} topicID={wIR.id} /> : null}
     </span>
-  ));
+  )))};
 
 export default WhatIRead;
