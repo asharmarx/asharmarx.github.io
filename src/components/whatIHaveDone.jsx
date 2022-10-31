@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const WhatIHaveDone = () => {
     const [whatIHaveDone, setWhatIHaveDone] = useState([]);
     useEffect(() => {
-      fetch("http://34.139.38.27/what-i-have-done")
+      fetch("https://brain.aman.monster/what-i-have-done")
       .then((response) => { 
         if (response.ok) {
         return response.json();

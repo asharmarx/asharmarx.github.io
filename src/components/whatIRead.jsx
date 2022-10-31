@@ -23,7 +23,7 @@ const SeeAlso = ({ seeAlso, topicID}) => {
 const WhatIRead = () => {
   const [whatIRead, setWhatIRead] = useState([]);
   useEffect(() => {
-    fetch("http://34.139.38.27/what-i-read")
+    fetch("https://brain.aman.monster/what-i-read")
     .then((response) => { 
       if (response.ok) {
       return response.json();
