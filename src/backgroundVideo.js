@@ -20,6 +20,7 @@ const BackgroundVideo = ({ muteMe, tickleMe, setLoaded }) => {
         loop
         muted={muteMe}
         onLoadedData={() => setLoaded(true)}
+        playsInline
       >
         <source src={videoSource} type="video/mp4" />
       </video>
