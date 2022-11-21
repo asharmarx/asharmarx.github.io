@@ -1,10 +1,11 @@
 import React from 'react';
+import { HomePageDiv } from '../styles/myStyles';
 
 const HomePage = () => (
-    <div>
+    <HomePageDiv>
         <h1>About</h1>
         <p>I do random things that I am interested in</p>
-    </div>
+    </HomePageDiv>
 );
 
 export default HomePage;
