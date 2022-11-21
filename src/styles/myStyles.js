@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const Wait4Me = styled.div`
+  height: 100%;
+  width: 100%;
+  h1 {
+    fonts-size: 5rem;
+  }
+  span {
+    display: table;
+    margin: 0 auto;
+  }
+`;
+
 const WrapMeSenpai = styled.div`
   height: 100%;
   width: 100%;
