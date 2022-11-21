@@ -36,10 +36,12 @@ export const MeInTheBackDiv = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  display: flex;
   padding: 0;
   margin: 0;
   width: 12%;
+  @media screen and (max-width: 850px) {
+    width: 48%;
+  }
 
   .topButton {
     width: 33%;
