@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { SeeAlsoWrapper } from "../styles/myStyles";
+import { SeeAlsoWrapper, WhatIReadWrapper } from "../styles/myStyles";
 
 const Resources = ({ resources, topicID }) => {
-    const rStyle = { padding: '0.5rem'}; 
     return (
-  <ul style={rStyle}>
+  <ul>
     {resources.map((r, idx) => (
       <li key={`${topicID}.resource.${idx}`}>{r.title} - <a target="__blank" href={r.link}>{r.link}</a></li>
     ))}
@@ -40,13 +39,13 @@ const WhatIRead = () => {
   }
   return (
   whatIRead.map((wIR) => (
-    <span key={wIR.id}>
+    <WhatIReadWrapper key={wIR.id}>
       <h1>{wIR.title}</h1>
       <p>- {wIR.summary}</p>
       {wIR.resources?.length ? <Resources resources={wIR.resources} topicID={wIR.id} /> : null}
       <br />
       {wIR.seeAlso?.length ? <SeeAlso seeAlso={wIR.seeAlso} topicID={wIR.id} /> : null}
-    </span>
+    </WhatIReadWrapper>
   )))};
 
 export default WhatIRead;
