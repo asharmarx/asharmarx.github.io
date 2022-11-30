@@ -1,33 +1,29 @@
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/globalStyles";
 import { lightTheme, darkTheme } from "./themes/theme";
+import WrapMeSenpai, { ButtonWrapper } from "./styles/myStyles";
 import {
   ThemeButton,
   MuteButton,
   TickleButton,
-} from "./components/ToggleButtons.jsx";
-import HomePage from "./components/homePage.jsx";
-import WhatIRead from "./components/whatIRead";
-import { Routes, Route, Navigate } from "react-router-dom";
+} from "./components/toggleButtons.jsx";
 import NavBar from "./components/navBar";
-import WhatIHaveDone from "./components/whatIHaveDone";
-import { useState } from "react";
 import BackgroundVideo from "./backgroundVideo";
-import WrapMeSenpai, { ButtonWrapper, Wait4Me } from "./styles/myStyles";
+import Wait4Me from "./components/wait4me";
+import useHighway from "./useHighway";
+import useToggle from "./hookudh/useToggle";
 
 const App = () => {
-  const [appTheme, setAppTheme] = useState(
+  const highways = useHighway();
+  const [appTheme, toggleAppTheme] = useToggle(
     window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
   );
-  const [muteMe, setMuteMe] = useState(true);
-  const [tickleMe, setTickleMe] = useState(true);
+  const [muteMe, toggleMuteMe] = useToggle(true);
+  const [tickleMe, toggleTickleMe] = useToggle(false);
   const [iamLoaded, setIamLoaded] = useState(false);
-  const toggleTheme = () => (appTheme ? setAppTheme(false) : setAppTheme(true));
-  const toggleMute = () => (muteMe ? setMuteMe(false) : setMuteMe(true));
-  const toggleTickle = () =>
-    tickleMe ? setTickleMe(false) : setTickleMe(true);
-  console.log("loaded", iamLoaded);
+
   return (
     <ThemeProvider theme={appTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
@@ -40,24 +36,15 @@ const App = () => {
         <>
           <WrapMeSenpai />
           <ButtonWrapper>
-            <ThemeButton onClick={toggleTheme} appTheme={appTheme} />
-            <MuteButton onClick={toggleMute} muteMe={muteMe} />
-            <TickleButton onClick={toggleTickle} tickleMe={tickleMe} />
+            <ThemeButton onClick={toggleAppTheme} appTheme={appTheme} />
+            <MuteButton onClick={toggleMuteMe} muteMe={muteMe} />
+            <TickleButton onClick={toggleTickleMe} tickleMe={tickleMe} />
           </ButtonWrapper>
           <NavBar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/what-i-read" element={<WhatIRead />} />
-            <Route path="/what-i-have-done" element={<WhatIHaveDone />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+          {highways}
         </>
       ) : (
-        <Wait4Me>
-          <span>
-            <h1>Wait for me....</h1>
-          </span>
-        </Wait4Me>
+        <Wait4Me />
       )}
     </ThemeProvider>
   );
