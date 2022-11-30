@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wait4Me = styled.div`
+export const Wait4MeWrap = styled.div`
   height: 100%;
   width: 100%;
   h1 {
