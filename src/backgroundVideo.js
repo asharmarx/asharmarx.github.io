@@ -16,7 +16,7 @@ const BackgroundVideo = ({ muteMe, tickleMe, setLoaded }) => {
     <MeInTheBackDiv>
       <video
         ref={refMeUp}
-        autoPlay
+        autoPlay={tickleMe}
         loop
         muted={muteMe}
         onLoadedData={() => setLoaded(true)}
