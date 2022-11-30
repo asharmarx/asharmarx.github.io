@@ -1,28 +1,36 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { WhatIHaveDoneWrapper } from "../styles/myStyles";
 
 const WhatIHaveDone = () => {
+    const { REACT_APP_ENV } = process.env;
+    const bumURL = REACT_APP_ENV === 'dev' ? "http://localhost:9443" : "https://brain.aman.monster";
     const [whatIHaveDone, setWhatIHaveDone] = useState([]);
+    const { hash } = useLocation();
     useEffect(() => {
-      fetch("https://brain.aman.monster/what-i-have-done")
-      .then((response) => { 
-        if (response.ok) {
-        return response.json();
+      const fetchDone = async () => {
+        try {
+          const resDone = await fetch(`${bumURL}/what-i-have-done`);
+          const resDoneData = await resDone.json();
+          setWhatIHaveDone(resDoneData.whatIHaveDone);
+        } catch (err) {
+          console.error('done error is: ', err);
+        }
       }
-      throw response;
-    })
-    .then((data) => {
-        setWhatIHaveDone(data.whatIHaveDone);
-    })
-    .catch((err) => console.error(`the error is ${err}`))
-    }, [])
+      fetchDone();
+    }, []);
+
+    useEffect(() => {
+      if (hash && whatIHaveDone.length) setTimeout(() => {document.getElementById(hash.slice(1,)).scrollIntoView({ behavior: "smooth"});}, 800);
+    },[whatIHaveDone, hash]);
+  
     if (!whatIHaveDone.length) {
       return null;
     }
     return (
         whatIHaveDone.map((wIHD) => (
-        <WhatIHaveDoneWrapper key={wIHD.id}>
-          <h1>{wIHD.title}</h1>
+        <WhatIHaveDoneWrapper id={wIHD.id} key={wIHD.id}>
+          <h1>{wIHD.title}<a href={`#${wIHD.id}`} aria-hidden="true">#</a></h1>
           <div className='d-flex'>
             {wIHD.imageLink && <span>
               {wIHD.imageLink.map((img) => (
