@@ -63,6 +63,10 @@ export const HomePageDiv = styled.div`
 export const WhatIHaveDoneWrapper = styled.div`
   padding: 1rem 0;
   margin: 0;
+  ul {
+    list-style: devanagari;
+    margin-left: 3rem;
+  }
   p {
     padding: 0.5rem 0;
   }
@@ -74,6 +78,7 @@ export const WhatIHaveDoneWrapper = styled.div`
 export const WhatIReadWrapper = styled.div`
   padding: 1rem 0;
   margin: 0;
+  scroll-behavior: smooth;
   p {
     padding: 1rem 0;
   }
