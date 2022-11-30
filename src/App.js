@@ -8,7 +8,7 @@ import {
 } from "./components/ToggleButtons.jsx";
 import HomePage from "./components/homePage.jsx";
 import WhatIRead from "./components/whatIRead";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/navBar";
 import WhatIHaveDone from "./components/whatIHaveDone";
 import { useState } from "react";
@@ -49,7 +49,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/what-i-read" element={<WhatIRead />} />
             <Route path="/what-i-have-done" element={<WhatIHaveDone />} />
-            <Route path="/*" element={<HomePage />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </>
       ) : (
