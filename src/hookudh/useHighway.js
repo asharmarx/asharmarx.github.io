@@ -1,9 +1,9 @@
 import { lazy, Suspense } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
-import Wait4Me from "./components/wait4me.jsx";
-const HomePage = lazy(() => import("./components/homePage.jsx"));
-const WhatIRead = lazy(() => import("./components/whatIRead.jsx"));
-const WhatIHaveDone = lazy(() => import("./components/whatIHaveDone.jsx"));
+import Wait4Me from "../components/wait4me.jsx";
+const HomePage = lazy(() => import("../components/homePage.jsx"));
+const WhatIRead = lazy(() => import("../components/whatIRead.jsx"));
+const WhatIHaveDone = lazy(() => import("../components/whatIHaveDone.jsx"));
 
 const useHighway = () =>
   useRoutes([

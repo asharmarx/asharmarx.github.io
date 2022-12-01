@@ -11,7 +11,7 @@ import {
 import NavBar from "./components/navBar";
 import BackgroundVideo from "./backgroundVideo";
 import Wait4Me from "./components/wait4me";
-import useHighway from "./useHighway";
+import useHighway from "./hookudh/useHighway";
 import useToggle from "./hookudh/useToggle";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
       window.matchMedia("(prefers-color-scheme: dark)").matches
   );
   const [muteMe, toggleMuteMe] = useToggle(true);
-  const [tickleMe, toggleTickleMe] = useToggle(false);
+  const [tickleMe, toggleTickleMe] = useToggle(true);
   const [iamLoaded, setIamLoaded] = useState(false);
 
   return (
