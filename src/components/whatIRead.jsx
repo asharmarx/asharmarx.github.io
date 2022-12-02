@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { SeeAlsoWrapper, WhatIReadWrapper } from "../styles/myStyles";
+import CopyDatShiz from "./copyDatShiz";
 
 const Resources = ({ resources, topicID }) => {
     return (
@@ -19,14 +20,15 @@ const SeeAlso = ({ seeAlso, topicID}) => {
             </div>
         </SeeAlsoWrapper>
     )
-}
+};
+
 const WhatIRead = () => {
   const { REACT_APP_ENV } = process.env;
   const bumURL = REACT_APP_ENV === 'dev' ? "http://localhost:9443" : "https://brain.aman.monster";
   const [whatIRead, setWhatIRead] = useState([]);
   const { hash } = useLocation();
   useEffect(() => {
-    const fetchDone = async () => {
+    const fetchRead = async () => {
       try {
         const resRead = await fetch(`${bumURL}/what-i-read`);
         const resReadData = await resRead.json();
@@ -35,7 +37,7 @@ const WhatIRead = () => {
         console.error('read error is: ', err);
       }
     }
-    fetchDone();
+    fetchRead();
   }, []);
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const WhatIRead = () => {
   return (
       whatIRead.map((wIR) => (
         <WhatIReadWrapper id={wIR.id} key={wIR.id}>
-          <h1>{wIR.title}<a href={`#${wIR.id}`} aria-hidden="true">#</a></h1>
+          <h1>{wIR.title}<a href={`#${wIR.id}`} aria-hidden="true"><CopyDatShiz /></a></h1>
           <p>- {wIR.summary}</p>
           {wIR.resources?.length ? <Resources resources={wIR.resources} topicID={wIR.id} /> : null}
           <br />
