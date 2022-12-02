@@ -50,7 +50,7 @@ const WhatIRead = () => {
   return (
       whatIRead.map((wIR) => (
         <WhatIReadWrapper id={wIR.id} key={wIR.id}>
-          <h1>{wIR.title}<a href={`#${wIR.id}`} aria-hidden="true"><CopyDatShiz /></a></h1>
+          <h1>{wIR.title}<a href={`#${wIR.id}`} aria-hidden="true"><CopyDatShiz itemID={wIR.id}/></a></h1>
           <p>- {wIR.summary}</p>
           {wIR.resources?.length ? <Resources resources={wIR.resources} topicID={wIR.id} /> : null}
           <br />
