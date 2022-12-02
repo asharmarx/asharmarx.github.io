@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { WhatIHaveDoneWrapper } from "../styles/myStyles";
+import CopyDatShiz from "./copyDatShiz";
 
 const WhatIHaveDone = () => {
     const { REACT_APP_ENV } = process.env;
@@ -30,7 +31,7 @@ const WhatIHaveDone = () => {
     return (
         whatIHaveDone.map((wIHD) => (
         <WhatIHaveDoneWrapper id={wIHD.id} key={wIHD.id}>
-          <h1>{wIHD.title}<a href={`#${wIHD.id}`} aria-hidden="true">#</a></h1>
+          <h1>{wIHD.title}<a href={`#${wIHD.id}`} aria-hidden="true"><CopyDatShiz /></a></h1>
           <div className='d-flex'>
             {wIHD.imageLink && <span>
               {wIHD.imageLink.map((img) => (
