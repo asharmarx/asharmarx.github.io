@@ -2,7 +2,13 @@ import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/globalStyles";
 import { lightTheme, darkTheme } from "./themes/theme";
-import WrapMeSenpai, { ButtonWrapper } from "./styles/myStyles";
+import {
+  WrapMeSenpai,
+  ButtonWrapper,
+  WhereAmIWrap,
+  TopDiv,
+  BottomDiv,
+} from "./styles/myStyles";
 import {
   ThemeButton,
   MuteButton,
@@ -11,11 +17,13 @@ import {
 import NavBar from "./components/navBar";
 import BackgroundVideo from "./backgroundVideo";
 import Wait4Me from "./components/wait4me";
-import useHighway from "./hookudh/useHighway";
+import useMajorHighway from "./hookudh/useMajorHighway";
 import useToggle from "./hookudh/useToggle";
+import useMinorHighway from "./hookudh/useMinorHighway";
 
 const App = () => {
-  const highways = useHighway();
+  const majorHighways = useMajorHighway();
+  const minorHighways = useMinorHighway();
   const [appTheme, toggleAppTheme] = useToggle(
     window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -35,13 +43,16 @@ const App = () => {
       {iamLoaded ? (
         <>
           <WrapMeSenpai />
-          <ButtonWrapper>
-            <ThemeButton onClick={toggleAppTheme} appTheme={appTheme} />
-            <MuteButton onClick={toggleMuteMe} muteMe={muteMe} />
-            <TickleButton onClick={toggleTickleMe} tickleMe={tickleMe} />
-          </ButtonWrapper>
-          <NavBar />
-          {highways}
+          <TopDiv>
+            <ButtonWrapper>
+              <ThemeButton onClick={toggleAppTheme} appTheme={appTheme} />
+              <MuteButton onClick={toggleMuteMe} muteMe={muteMe} />
+              <TickleButton onClick={toggleTickleMe} tickleMe={tickleMe} />
+            </ButtonWrapper>
+            <NavBar />
+            <WhereAmIWrap>{minorHighways}</WhereAmIWrap>
+          </TopDiv>
+          <BottomDiv>{majorHighways}</BottomDiv>
         </>
       ) : (
         <Wait4Me />
