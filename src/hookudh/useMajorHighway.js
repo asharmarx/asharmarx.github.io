@@ -4,8 +4,9 @@ import Wait4Me from "../components/wait4me.jsx";
 const HomePage = lazy(() => import("../components/homePage.jsx"));
 const WhatIRead = lazy(() => import("../components/whatIRead.jsx"));
 const WhatIHaveDone = lazy(() => import("../components/whatIHaveDone.jsx"));
+const WhatIHaveHeard = lazy(() => import("../components/whatIHaveHeard.jsx"));
 
-const useHighway = () =>
+const useMajorHighway = () =>
   useRoutes([
     {
       path: "/",
@@ -32,6 +33,14 @@ const useHighway = () =>
       ),
     },
     {
+      path: "/what-i-have-heard",
+      element: (
+        <Suspense fallback={<Wait4Me />}>
+          <WhatIHaveHeard />
+        </Suspense>
+      ),
+    },
+    {
       path: "*",
       element: (
         <Suspense fallback={<Wait4Me />}>
@@ -41,4 +50,4 @@ const useHighway = () =>
     },
   ]);
 
-export default useHighway;
+export default useMajorHighway;
