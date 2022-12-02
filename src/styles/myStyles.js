@@ -12,19 +12,17 @@ export const Wait4MeWrap = styled.div`
   }
 `;
 
-const WrapMeSenpai = styled.div`
+export const WrapMeSenpai = styled.div`
   height: 100%;
   width: 100%;
   position: fixed;
-  z-index: -1;
+  z-index: -1000;
   background-color: ${({ theme }) => theme.meColor};
 `;
 
-export default WrapMeSenpai;
-
 export const MeInTheBackDiv = styled.div`
   position: fixed;
-  z-index: -2;
+  z-index: -2000;
   width: 100%;
   height: 100%;
 
@@ -33,6 +31,12 @@ export const MeInTheBackDiv = styled.div`
     width: 100%;
     object-fit: cover;
   }
+`;
+
+// contains togglebuttons, nav links, and route desc
+export const TopDiv = styled.div`
+  height: 30%;
+  overflow-y: scroll;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -53,6 +57,24 @@ export const ButtonWrapper = styled.div`
   .buttonLogo {
     font-size: 5rem;
   }
+`;
+
+export const WhereAmIWrap = styled.div`
+  margin: 0;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.8rem;
+
+  @media screen and (max-width: 850px) {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+  }
+`;
+
+// contains the mainHighway
+export const BottomDiv = styled.div`
+  height: 70vh;
+  overflow: scroll;
 `;
 
 export const HomePageDiv = styled.div`
@@ -98,5 +120,13 @@ export const SeeAlsoWrapper = styled.div`
     span {
       padding-right: 0.5rem;
     }
+  }
+`;
+
+export const WhatIHaveHeardWrapper = styled.div`
+  .auxLinknPicDiv {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1rem;
   }
 `;
