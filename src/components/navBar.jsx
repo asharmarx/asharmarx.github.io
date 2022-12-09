@@ -1,17 +1,16 @@
-import React from 'react';
-import { Nav } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
-import { MyNavBar } from '../styles/navStyles';
+import Nav from 'react-bootstrap/Nav';
+import { useLocation, NavLink } from 'react-router-dom';
+import { MyNavBar } from '../styles/myStyles';
 
 const SpecialLink = ({ children, to }) => {
     const location = useLocation();
     const youhere = location.pathname === to;
 
-    return <Link to={to}>{children} {youhere ? '😰': ''}</Link>
+    return <NavLink to={to}>{children} {youhere ? '😰': ''}</NavLink>
 }
 
 const NavBar = () => (
-    <MyNavBar className='justify-content-center' activeKey='/home'>
+    <MyNavBar className='justify-content-center' activeKey="/">
         <Nav.Item>
             <SpecialLink to="/">Home</SpecialLink>
         </Nav.Item>
