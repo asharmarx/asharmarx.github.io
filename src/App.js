@@ -16,7 +16,7 @@ import {
 } from "./components/toggleButtons.jsx";
 import NavBar from "./components/navBar";
 import BackgroundVideo from "./backgroundVideo";
-import Wait4Me from "./components/wait4me";
+import Wait4Me from "./components/wait4meS";
 import useMajorHighway from "./hookudh/useMajorHighway";
 import useToggle from "./hookudh/useToggle";
 import useMinorHighway from "./hookudh/useMinorHighway";
