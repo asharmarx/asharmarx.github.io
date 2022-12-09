@@ -31,32 +31,28 @@ const App = () => {
   const [muteMe, toggleMuteMe] = useToggle(true);
   const [tickleMe, toggleTickleMe] = useToggle(true);
   const [iamLoaded, setIamLoaded] = useState(false);
-
+  const [wait4MeWidth, setWait4MeWidth] = useState(0);
   return (
     <ThemeProvider theme={appTheme ? darkTheme : lightTheme}>
       <GlobalStyles />
+      {!iamLoaded && <Wait4Me wait4MeWidth={wait4MeWidth} />}
       <BackgroundVideo
         muteMe={muteMe}
         tickleMe={tickleMe}
         setLoaded={setIamLoaded}
+        setWait4MeWidth={setWait4MeWidth}
       />
-      {iamLoaded ? (
-        <>
-          <WrapMeSenpai />
-          <TopDiv>
-            <ButtonWrapper>
-              <ThemeButton onClick={toggleAppTheme} appTheme={appTheme} />
-              <MuteButton onClick={toggleMuteMe} muteMe={muteMe} />
-              <TickleButton onClick={toggleTickleMe} tickleMe={tickleMe} />
-            </ButtonWrapper>
-            <NavBar />
-            <WhereAmIWrap>{minorHighways}</WhereAmIWrap>
-          </TopDiv>
-          <BottomDiv>{majorHighways}</BottomDiv>
-        </>
-      ) : (
-        <Wait4Me />
-      )}
+      <WrapMeSenpai />
+      <TopDiv>
+        <ButtonWrapper>
+          <ThemeButton onClick={toggleAppTheme} appTheme={appTheme} />
+          <MuteButton onClick={toggleMuteMe} muteMe={muteMe} />
+          <TickleButton onClick={toggleTickleMe} tickleMe={tickleMe} />
+        </ButtonWrapper>
+        <NavBar />
+        <WhereAmIWrap>{minorHighways}</WhereAmIWrap>
+      </TopDiv>
+      <BottomDiv>{majorHighways}</BottomDiv>
     </ThemeProvider>
   );
 };
