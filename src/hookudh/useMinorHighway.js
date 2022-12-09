@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { useRoutes, Navigate } from "react-router-dom";
-import Wait4Me from "../components/wait4me.jsx";
+import Wait4Me from "../components/wait4meS.jsx";
 import {
   HomeDesc,
   WhatIReadDesc,
