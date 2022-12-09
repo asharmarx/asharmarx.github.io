@@ -6,6 +6,7 @@ export const lightTheme = {
   background: "#363537",
   hover: "#13A66F",
   buttonBackground: "#021A41",
+  activeNavLink: "#f42069",
 };
 export const darkTheme = {
   meColor: "#00000080",
@@ -15,4 +16,5 @@ export const darkTheme = {
   background: "#999",
   hover: "#ec5990",
   buttonBackground: "#FFF",
+  activeNavLink: "#b4da55",
 };
