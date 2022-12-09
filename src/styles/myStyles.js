@@ -1,14 +1,41 @@
 import styled from "styled-components";
+import { Nav } from "react-bootstrap";
 
 export const Wait4MeWrap = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
+  background: linear-gradient(
+    to right ${(props) => ", #7678ED " + props.wait4MeWidth}%,
+    #f7567c 50%
+  );
   h1 {
     fonts-size: 5rem;
   }
   span {
     display: table;
     margin: 0 auto;
+  }
+`;
+
+export const MyNavBar = styled(Nav)`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  text-decoration: none;
+  font-size: 3.5rem;
+  padding-bottom: 1rem;
+  gap: 5rem;
+
+  .nav-item > .active {
+    background-color: ${({ theme }) => theme.activeNavLink};
+    color: #000;
+  }
+
+  @media screen and (max-width: 850px) {
+    display: block;
+    font-size: 1.75rem;
+    padding: 1rem 0;
   }
 `;
 
