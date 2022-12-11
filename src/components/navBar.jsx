@@ -1,16 +1,17 @@
 import Nav from 'react-bootstrap/Nav';
 import { useLocation, NavLink } from 'react-router-dom';
-import { MyNavBar } from '../styles/myStyles';
 
 const SpecialLink = ({ children, to }) => {
     const location = useLocation();
     const youhere = location.pathname === to;
 
     return <NavLink to={to}>{children} {youhere ? '😰': ''}</NavLink>
-}
+};
 
-const NavBar = () => (
-    <MyNavBar className='justify-content-center' activeKey="/">
+
+
+const NavBar = ({ navWrap: NavWrap }) => (
+    <NavWrap activeKey="/">
         <Nav.Item>
             <SpecialLink to="/">Home</SpecialLink>
         </Nav.Item>
@@ -23,7 +24,7 @@ const NavBar = () => (
         <Nav.Item>
             <SpecialLink to="/what-i-have-heard">What I Have Heard</SpecialLink>
         </Nav.Item>
-    </MyNavBar>
+    </NavWrap>
 );
 
 export default NavBar;
