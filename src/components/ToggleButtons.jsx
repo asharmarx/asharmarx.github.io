@@ -17,3 +17,9 @@ export const TickleButton = ({ tickleMe, onClick }) => (
         <span className='buttonLogo'>{tickleMe ? '⏸' : '▶️'}</span>
     </Button>
 );
+
+export const SwitchARooButton = ({ switchARoo, onClick }) => (
+    <Button onClick={onClick} className='topButton'>
+        <span className='buttonLogo'>{switchARoo ? '👆🏼👇🏼' : '👈🏼👉🏼'}</span>
+    </Button>
+);
