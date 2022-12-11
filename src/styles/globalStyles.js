@@ -20,9 +20,10 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+    font-family: Josefin Sans, Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.50s linear;
     font-size: 1.5rem;
+    overflow-y: hidden;
   }
 
   #root {
@@ -32,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
   a {
     color: ${({ theme }) => theme.text};
 
-    :hover {
+    &:hover {
      color: ${({ theme }) => theme.hover};
     }
   }
