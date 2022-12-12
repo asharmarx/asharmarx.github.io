@@ -25,7 +25,7 @@ const TopBottomApp = ({ muteMe, tickleMe }) => {
         tickleMe={tickleMe}
         setLoaded={setIamLoaded}
         setWait4MeWidth={setWait4MeWidth}
-        style={{ width: "100%" }}
+        videoWidth="100%"
       />
       <WrapMeSenpai />
       <TopDiv>

@@ -65,7 +65,6 @@ export const MeInTheBackDiv = styled.div`
   position: fixed;
   z-index: -2000;
   height: 100%;
-  width: inherit;
 
   video {
     height: 100%;
@@ -90,6 +89,7 @@ export const WhereAmIWrap = styled.div`
 export const HomePageDiv = styled.div`
   height: 100%;
   width: 100%;
+  padding: 1rem;
 `;
 
 export const WhatIHaveDoneWrapper = styled.div`

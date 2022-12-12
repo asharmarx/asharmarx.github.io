@@ -22,6 +22,7 @@ const LeftRightApp = ({ muteMe, tickleMe }) => {
           tickleMe={tickleMe}
           setLoaded={setIamLoaded}
           setWait4MeWidth={setWait4MeWidth}
+          videoWidth="inherit"
         />
         <WrapMeSenpai />
         <NavBar navWrap={LeftRightNav} />

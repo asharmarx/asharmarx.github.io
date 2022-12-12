@@ -1,7 +1,13 @@
 import { useRef } from "react";
 import { MeInTheBackDiv } from "./styles/myStyles";
 
-const BackgroundVideo = ({ muteMe, tickleMe, setLoaded, setWait4MeWidth }) => {
+const BackgroundVideo = ({
+  muteMe,
+  tickleMe,
+  setLoaded,
+  setWait4MeWidth,
+  videoWidth,
+}) => {
   const refMeUp = useRef(null);
   if (refMeUp.current) {
     if (tickleMe) {
@@ -22,7 +28,7 @@ const BackgroundVideo = ({ muteMe, tickleMe, setLoaded, setWait4MeWidth }) => {
   const videoSource =
     "https://drive.google.com/uc?id=11fKiSBYtC-5q3xiuevY3Qd6m-Y-SE2vS";
   return (
-    <MeInTheBackDiv>
+    <MeInTheBackDiv style={{ width: videoWidth }}>
       <video
         ref={refMeUp}
         autoPlay
