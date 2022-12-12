@@ -3,18 +3,18 @@ import Nav from "react-bootstrap/Nav";
 
 // Components in App.js
 export const ButtonWrapper = styled.div`
-  height: 10%;
-  padding: 0;
-  margin: 0;
   width: 100%;
   text-align: center;
+  position: fixed;
+  z-index: 10;
+  background-color: ${({ theme }) => theme.buttonBackground};
 
   .topButton {
     width: 5%;
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color: ${({ theme }) => theme.buttonBackground};
+    background-color: inherit;
   }
 
   @media screen and (max-width: 850px) {
@@ -123,7 +123,6 @@ export const WhatIReadWrapper = styled.div`
   ul {
     margin-left: 0.5rem;
     list-style: none;
-    text-overflow: ellipsis ellipsis;
   }
 
   li {
@@ -179,6 +178,7 @@ export const LeftDiv = styled.div`
   width: 30vw;
   height: 100%;
   position: fixed;
+  top: 10%;
   @media screen and (max-width: 850px) {
     width: 40vw;
   }
@@ -188,6 +188,7 @@ export const RightDiv = styled.div`
   display: inline-block;
   width: 68vw;
   position: relative;
+  top: 10%;
   left: 32%;
   overflow-x: hidden;
   @media screen and (max-width: 850px) {
@@ -233,6 +234,7 @@ export const LeftRightNav = styled(Nav)`
 // Top/Bpttom Styles
 
 export const TopDiv = styled.div`
+  padding-top: 3rem;
   height: 30%;
   overflow-y: scroll;
 `;
