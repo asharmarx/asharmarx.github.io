@@ -14,7 +14,7 @@ const LeftRightApp = ({ muteMe, tickleMe }) => {
   const [iamLoaded, setIamLoaded] = useState(false);
   const [wait4MeWidth, setWait4MeWidth] = useState(0);
   return (
-    <div style={{ height: "90vh", overflowY: "scroll" }}>
+    <div style={{ height: "100vh", overflowY: "scroll" }}>
       <LeftDiv>
         {!iamLoaded && <Wait4Me wait4MeWidth={wait4MeWidth} />}{" "}
         <BackgroundVideo
@@ -22,7 +22,6 @@ const LeftRightApp = ({ muteMe, tickleMe }) => {
           tickleMe={tickleMe}
           setLoaded={setIamLoaded}
           setWait4MeWidth={setWait4MeWidth}
-          videoWidth="30vw"
         />
         <WrapMeSenpai />
         <NavBar navWrap={LeftRightNav} />
