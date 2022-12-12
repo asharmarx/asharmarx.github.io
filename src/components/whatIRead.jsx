@@ -48,15 +48,18 @@ const WhatIRead = () => {
     return null;
   }
   return (
-      whatIRead.map((wIR) => (
-        <WhatIReadWrapper id={wIR.id} key={wIR.id}>
+    <WhatIReadWrapper>
+      {whatIRead.map((wIR) => (
+        <div id={wIR.id} key={wIR.id}>
           <h1>{wIR.title}<a href={`#${wIR.id}`} aria-hidden="true"><CopyDatShiz itemID={wIR.id}/></a></h1>
-          <p>- {wIR.summary}</p>
+          <p>{wIR.summary}</p>
           {wIR.resources?.length ? <Resources resources={wIR.resources} topicID={wIR.id} /> : null}
           <br />
           {wIR.seeAlso?.length ? <SeeAlso seeAlso={wIR.seeAlso} topicID={wIR.id} /> : null}
-        </WhatIReadWrapper>
-      ))
+        </div>
+        ))
+      }
+    </WhatIReadWrapper>
   )};
 
 export default WhatIRead;
