@@ -16,17 +16,15 @@ export const ButtonWrapper = styled.div`
     margin: 0;
     background-color: ${({ theme }) => theme.buttonBackground};
   }
+
+  @media screen and (max-width: 850px) {
+    .topButton {
+      width: 25%;
+      font-size: 2.5rem;
+    }
+  }
   .buttonLogo {
     font-size: 3rem;
-    @media screen and (max-width: 850px) {
-      font-size: 2.5rem;
-      padding: 1rem 0;
-    }
-
-    @media screen and (max-width: 500px) {
-      font-size: 1.5rem;
-      padding: 1rem 0;
-    }
   }
 `;
 
@@ -38,14 +36,20 @@ export const Wait4MeWrap = styled.div`
     to right ${(props) => ", #7678ED " + props.wait4MeWidth}%,
     #f7567c 50%
   );
+
   h1 {
     fonts-size: 5rem;
     color: #fff;
     background-color: #000;
   }
+
   span {
     display: table;
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 850px) {
+    font-size: 1rem;
   }
 `;
 
@@ -61,7 +65,7 @@ export const MeInTheBackDiv = styled.div`
   position: fixed;
   z-index: -2000;
   height: 100%;
-  width: 100%;
+  width: inherit;
 
   video {
     height: 100%;
@@ -72,14 +76,14 @@ export const MeInTheBackDiv = styled.div`
 
 export const WhereAmIWrap = styled.div`
   margin: 0;
-  padding: 2rem 0;
+  padding: 2rem 0.5rem;
   text-align: center;
   font-size: 1.8rem;
   color: ${({ theme }) => theme.navTextColor};
 
   @media screen and (max-width: 850px) {
-    font-size: 1.2rem;
-    padding: 1rem 0;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
   }
 `;
 
@@ -89,8 +93,9 @@ export const HomePageDiv = styled.div`
 `;
 
 export const WhatIHaveDoneWrapper = styled.div`
-  padding: 1rem 0;
+  padding: 1rem;
   margin: 0;
+
   ul {
     list-style: devanagari;
     margin-left: 3rem;
@@ -104,19 +109,38 @@ export const WhatIHaveDoneWrapper = styled.div`
 `;
 
 export const WhatIReadWrapper = styled.div`
-  padding: 1rem 0;
+  padding: 1rem 1rem;
   margin: 0;
   scroll-behavior: smooth;
+  background-color: #00000070;
+  div {
+    padding: 0.5rem 0;
+  }
   p {
     padding: 1rem 0;
   }
 
   ul {
-    margin-left: 2rem;
+    margin-left: 0.5rem;
+    list-style: none;
+    text-overflow: ellipsis ellipsis;
   }
 
   li {
     padding: 0.5rem 0;
+  }
+
+  @media screen and (max-width: 850px) {
+    h1 {
+      font-size: 2rem;
+    }
+    ul {
+      font-size: 1.2rem;
+    }
+    li {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
   }
 `;
 
@@ -129,6 +153,13 @@ export const SeeAlsoWrapper = styled.div`
     display: flex;
     span {
       padding-right: 0.5rem;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    h3 {
+      font-size: 1.5rem;
+      padding: 0.5rem 0;
     }
   }
 `;
@@ -148,6 +179,9 @@ export const LeftDiv = styled.div`
   width: 30vw;
   height: 100%;
   position: fixed;
+  @media screen and (max-width: 850px) {
+    width: 40vw;
+  }
 `;
 
 export const RightDiv = styled.div`
@@ -155,6 +189,11 @@ export const RightDiv = styled.div`
   width: 68vw;
   position: relative;
   left: 32%;
+  overflow-x: hidden;
+  @media screen and (max-width: 850px) {
+    width: 60vw;
+    left: 40%;
+  }
 `;
 
 export const LeftRightNav = styled(Nav)`
@@ -233,7 +272,12 @@ export const TopBottomNav = styled.div`
   }
 
   @media screen and (max-width: 850px) {
+    display: block;
     font-size: 1.75rem;
     padding: 1rem 0;
+
+    .nav-item {
+      padding: 1rem 0;
+    }
   }
 `;
