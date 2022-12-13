@@ -29,22 +29,27 @@ const WhatIHaveDone = () => {
       return null;
     }
     return (
-        whatIHaveDone.map((wIHD) => (
-        <WhatIHaveDoneWrapper id={wIHD.id} key={wIHD.id}>
-          <h1>{wIHD.title}<a href={`#${wIHD.id}`} aria-hidden="true"><CopyDatShiz itemID={wIHD.id} /></a></h1>
-          <div className='d-flex'>
-            {wIHD.imageLink && <span>
-              {wIHD.imageLink.map((img) => (
-                  <img style={{ margin: "0 0.5rem 0 0"}} key={img} src={img} alt={wIHD.title} />
-              )
-              )}
-              </span>}
-              <p>{wIHD.description}</p>
-              <ul>
-                  {wIHD.components && wIHD.components.map((comp) => <li key={comp}>{comp}</li>)}
-              </ul>
-          </div>
-        </WhatIHaveDoneWrapper>
-  )))};
+      <WhatIHaveDoneWrapper >
+        {
+          whatIHaveDone.map((wIHD) => (
+            <div id={wIHD.id} key={wIHD.id}>
+            <h1>{wIHD.title}<a href={`#${wIHD.id}`} aria-hidden="true"><CopyDatShiz itemID={wIHD.id} /></a></h1>
+            <div className='d-flex'>
+              {wIHD.imageLink && <span>
+                {wIHD.imageLink.map((img) => (
+                    <img style={{ margin: "0 0.5rem 0 0"}} key={img} src={img} alt={wIHD.title} />
+                )
+                )}
+                </span>}
+                <p>{wIHD.description}</p>
+                <ul>
+                    {wIHD.components && wIHD.components.map((comp) => <li key={comp}>{comp}</li>)}
+                </ul>
+            </div>
+            </div>
+          ))
+        }
+  </WhatIHaveDoneWrapper>
+)};
 
   export default WhatIHaveDone;
