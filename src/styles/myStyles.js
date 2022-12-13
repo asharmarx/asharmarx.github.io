@@ -38,14 +38,17 @@ export const Wait4MeWrap = styled.div`
   );
 
   h1 {
-    fonts-size: 5rem;
+    font-size: 2.5rem;
     color: #fff;
     background-color: #000;
+    padding: 1rem;
   }
 
   span {
-    display: table;
-    margin: 0 auto;
+    display: block;
+    width: 100%;
+    padding-top: 50vh;
+    text-align: center;
   }
 
   @media screen and (max-width: 850px) {
@@ -95,7 +98,10 @@ export const HomePageDiv = styled.div`
 export const WhatIHaveDoneWrapper = styled.div`
   padding: 1rem;
   margin: 0;
-
+  background-color: ${({ theme }) => theme.whatIHaveOverlay};
+  div {
+    padding: 0.5rem 0;
+  }
   ul {
     list-style: devanagari;
     margin-left: 3rem;
@@ -106,16 +112,29 @@ export const WhatIHaveDoneWrapper = styled.div`
   li {
     padding: 0.2rem 0;
   }
+
+  @media screen and (max-width: 850px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    ul {
+      font-size: 1.8rem;
+    }
+    img {
+      width: 75%;
+    }
+  }
 `;
 
 export const WhatIReadWrapper = styled.div`
-  padding: 1rem 1rem;
+  padding: 1rem;
   margin: 0;
-  scroll-behavior: smooth;
-  background-color: #00000070;
+  background-color: ${({ theme }) => theme.whatIHaveOverlay};
+
   div {
     padding: 0.5rem 0;
   }
+
   p {
     padding: 1rem 0;
   }
@@ -178,7 +197,6 @@ export const LeftDiv = styled.div`
   width: 30vw;
   height: 100%;
   position: fixed;
-  top: 10%;
   @media screen and (max-width: 850px) {
     width: 40vw;
   }
@@ -188,7 +206,6 @@ export const RightDiv = styled.div`
   display: inline-block;
   width: 68vw;
   position: relative;
-  top: 10%;
   left: 32%;
   overflow-x: hidden;
   @media screen and (max-width: 850px) {
@@ -226,7 +243,7 @@ export const LeftRightNav = styled(Nav)`
   }
 
   @media screen and (max-width: 850px) {
-    font-size: 1.75rem;
+    font-size: 2rem;
     padding: 1rem 0;
   }
 `;
