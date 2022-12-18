@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import { createClient, Provider as GQLProvider } from "urql";
 import {
   MuteButton,
   SwitchARooButton,
@@ -13,6 +14,15 @@ import { lightTheme, darkTheme } from "./themes/theme";
 import TopBottomApp from "./topBottom";
 
 const App = () => {
+  const { REACT_APP_ENV } = process.env;
+  const bumURL =
+    REACT_APP_ENV === "dev"
+      ? "http://localhost:9443/collectthis"
+      : "https://brain.aman.monster/collectthis";
+
+  const klajunt = createClient({
+    url: bumURL,
+  });
   const [appTheme, toggleAppTheme] = useToggle(
     window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -30,11 +40,13 @@ const App = () => {
         <TickleButton onClick={toggleTickleMe} tickleMe={tickleMe} />
         <SwitchARooButton onClick={toggleSwitchARoo} switchARoo={switchARoo} />
       </ButtonWrapper>
-      {switchARoo ? (
-        <LeftRightApp muteMe={muteMe} tickleMe={tickleMe} />
-      ) : (
-        <TopBottomApp muteMe={muteMe} tickleMe={tickleMe} />
-      )}
+      <GQLProvider value={klajunt}>
+        {switchARoo ? (
+          <LeftRightApp muteMe={muteMe} tickleMe={tickleMe} />
+        ) : (
+          <TopBottomApp muteMe={muteMe} tickleMe={tickleMe} />
+        )}
+      </GQLProvider>
     </ThemeProvider>
   );
 };
