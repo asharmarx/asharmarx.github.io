@@ -1,22 +1,33 @@
 import { useState, useEffect } from "react";
+import { useQuery } from 'urql';
 import { WhatIHaveHeardWrapper } from "../styles/myStyles";
 
-const WhatIHaveHeard = () => {
-  const { REACT_APP_ENV } = process.env;
-  const bumURL = REACT_APP_ENV === 'dev' ? "http://localhost:9443" : "https://brain.aman.monster";
-  const [whatIHaveHeard, setWhatIHaveHeard] = useState([]);
-  useEffect(() => {
-    const fetchHeard = async () => {
-      try {
-        const resHeard = await fetch(`${bumURL}/what-i-have-heard`);
-        const resHeardData = await resHeard.json();
-        setWhatIHaveHeard(resHeardData.whatIHaveHeard);
-      } catch (err) {
-        console.error('heard error is: ', err);
+
+const WhatIHaveHeardQuery = `
+  query {
+    whatihaveheard {
+      year
+      aux {
+        id
+        song
+        num
       }
     }
-    fetchHeard();
-  }, []);
+  }
+`;
+
+const WhatIHaveHeard = () => {
+  const [result] = useQuery({
+    query: WhatIHaveHeardQuery,
+  });
+
+  const { data } = result;
+  const [whatIHaveHeard, setWhatIHaveHeard] = useState([]);
+
+  useEffect(() => {
+    if (data && data.whatihaveheard) return setWhatIHaveHeard(data.whatihaveheard)
+    return () => null;
+  }, [data])
 
   if (!whatIHaveHeard.length) {
     return null;

@@ -1,33 +1,42 @@
 import { useState, useEffect } from "react";
+import { useQuery } from 'urql';
 import { useLocation } from "react-router-dom";
 import { WhatIHaveDoneWrapper } from "../styles/myStyles";
 import CopyDatShiz from "./copyDatShiz";
 
-const WhatIHaveDone = () => {
-    const { REACT_APP_ENV } = process.env;
-    const bumURL = REACT_APP_ENV === 'dev' ? "http://localhost:9443" : "https://brain.aman.monster";
-    const [whatIHaveDone, setWhatIHaveDone] = useState([]);
-    const { hash } = useLocation();
-    useEffect(() => {
-      const fetchDone = async () => {
-        try {
-          const resDone = await fetch(`${bumURL}/what-i-have-done`);
-          const resDoneData = await resDone.json();
-          setWhatIHaveDone(resDoneData.whatIHaveDone);
-        } catch (err) {
-          console.error('done error is: ', err);
-        }
-      }
-      fetchDone();
-    }, []);
 
-    useEffect(() => {
-      if (hash && whatIHaveDone.length) setTimeout(() => {document.getElementById(hash.slice(1,)).scrollIntoView({ behavior: "smooth"});}, 800);
-    },[whatIHaveDone, hash]);
-  
-    if (!whatIHaveDone.length) {
-      return null;
+const WhatIHaveDoneQuery = `
+  query {
+    whatihavedone {
+      id
+      title
+      description
+      components
+      imageLink
     }
+  }
+  `;
+
+const WhatIHaveDone = () => {
+  const [result] = useQuery({
+    query: WhatIHaveDoneQuery,
+  });
+
+  const { data } = result;
+  const [whatIHaveDone, setWhatIHaveDone] = useState([]);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (data && data.whatihavedone) return setWhatIHaveDone(data.whatihavedone)
+    return () => null;
+  }, [data])
+    useEffect(() => {
+    if (hash && whatIHaveDone.length) setTimeout(() => {document.getElementById(hash.slice(1,)).scrollIntoView({ behavior: "smooth"});}, 800);
+  },[whatIHaveDone, hash]);
+
+  if (!whatIHaveDone.length) {
+    return null;
+  }
     return (
       <WhatIHaveDoneWrapper >
         {

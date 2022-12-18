@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useQuery } from 'urql';
 import { useLocation } from "react-router-dom";
 import { SeeAlsoWrapper, WhatIReadWrapper } from "../styles/myStyles";
 import CopyDatShiz from "./copyDatShiz";
@@ -22,31 +23,42 @@ const SeeAlso = ({ seeAlso, topicID}) => {
     )
 };
 
-const WhatIRead = () => {
-  const { REACT_APP_ENV } = process.env;
-  const bumURL = REACT_APP_ENV === 'dev' ? "http://localhost:9443" : "https://brain.aman.monster";
-  const [whatIRead, setWhatIRead] = useState([]);
-  const { hash } = useLocation();
-  useEffect(() => {
-    const fetchRead = async () => {
-      try {
-        const resRead = await fetch(`${bumURL}/what-i-read`);
-        const resReadData = await resRead.json();
-        setWhatIRead(resReadData.whatIRead);
-      } catch (err) {
-        console.error('read error is: ', err);
+const WhatIReadQuery = `
+  query {
+    whatiread {
+      id
+      title
+      summary
+      seeAlso {
+        title
+        link
+      }
+      resources {
+        title
+        link
       }
     }
-    fetchRead();
-  }, []);
+}`;
+
+const WhatIRead = () => {
+  const [result] = useQuery({
+    query: WhatIReadQuery,
+  });
+
+  const { data } = result;
+  const [whatIRead, setWhatIRead] = useState([]);
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (data && data.whatiread) return setWhatIRead(data.whatiread)
+    return () => null;
+  }, [data])
 
   useEffect(() => {
     if (hash && whatIRead.length) setTimeout(() => {document.getElementById(hash.slice(1,)).scrollIntoView({ behavior: "smooth"});}, 800);;
   },[whatIRead, hash]);
-
-  if (!whatIRead.length) {
-    return null;
-  }
+  
+  if(!whatIRead.length) return null;
   return (
     <WhatIReadWrapper>
       {whatIRead.map((wIR) => (
