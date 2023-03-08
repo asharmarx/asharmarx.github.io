@@ -29,7 +29,7 @@ const CityInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setCity("");
-    const geoURL = `http://api.openweathermap.org/geo/1.0/zip?zip=${city},us&appid=e203317f0df5474c05874e35b030eda3`;
+    const geoURL = `https://api.openweathermap.org/geo/1.0/zip?zip=${city},us&appid=e203317f0df5474c05874e35b030eda3`;
     fetch(geoURL)
     .then((response) => {
       if (response.ok) return response.json()
