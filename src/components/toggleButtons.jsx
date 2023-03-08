@@ -20,6 +20,6 @@ export const TickleButton = ({ tickleMe, onClick }) => (
 
 export const SwitchARooButton = ({ switchARoo, onClick }) => (
     <Button onClick={onClick} className='topButton'>
-        <span className='buttonLogo'>{switchARoo ? '👆🏼👇🏼' : '👈🏼👉🏼'}</span>
+        <span className='buttonLogo'>{switchARoo ? '👈🏼👉🏼' : '👆🏼👇🏼'}</span>
     </Button>
 );
