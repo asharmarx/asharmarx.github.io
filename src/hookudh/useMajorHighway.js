@@ -5,6 +5,7 @@ const HomePage = lazy(() => import("../components/homePage.jsx"));
 const WhatIRead = lazy(() => import("../components/whatIRead.jsx"));
 const WhatIHaveDone = lazy(() => import("../components/whatIHaveDone.jsx"));
 const WhatIHaveHeard = lazy(() => import("../components/whatIHaveHeard.jsx"));
+const ChaosMonkeys = lazy(() => import("../components/chaosMonkeys.jsx"));
 
 const useMajorHighway = () =>
   useRoutes([
@@ -37,6 +38,14 @@ const useMajorHighway = () =>
       element: (
         <Suspense fallback={<Wait4Me />}>
           <WhatIHaveHeard />
+        </Suspense>
+      ),
+    },
+    {
+      path: "/entropy",
+      element: (
+        <Suspense fallback={<Wait4Me />}>
+          <ChaosMonkeys />
         </Suspense>
       ),
     },

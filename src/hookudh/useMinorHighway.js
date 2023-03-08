@@ -6,6 +6,7 @@ import {
   WhatIReadDesc,
   WhatIHaveDoneDesc,
   WhatIHaveHeardDesc,
+  EntropyDesc,
 } from "../components/whereAmI.jsx";
 
 const useMinorHighway = () =>
@@ -42,7 +43,14 @@ const useMinorHighway = () =>
         </Suspense>
       ),
     },
-
+    {
+      path: "/entropy",
+      element: (
+        <Suspense fallback={<Wait4Me />}>
+          <EntropyDesc />
+        </Suspense>
+      ),
+    },
     {
       path: "*",
       element: (
