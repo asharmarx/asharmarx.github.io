@@ -24,6 +24,10 @@ const NavBar = ({ navWrap: NavWrap }) => (
         <Nav.Item>
             <SpecialLink to="/what-i-have-heard">What I Have Heard</SpecialLink>
         </Nav.Item>
+        <Nav.Item>
+            <SpecialLink to="/entropy">Entropomorphize</SpecialLink>
+        </Nav.Item>
+
     </NavWrap>
 );
 
