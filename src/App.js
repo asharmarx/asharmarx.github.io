@@ -42,9 +42,9 @@ const App = () => {
       </ButtonWrapper>
       <GQLProvider value={klajunt}>
         {switchARoo ? (
-          <LeftRightApp muteMe={muteMe} tickleMe={tickleMe} />
-        ) : (
           <TopBottomApp muteMe={muteMe} tickleMe={tickleMe} />
+        ) : (
+          <LeftRightApp muteMe={muteMe} tickleMe={tickleMe} />
         )}
       </GQLProvider>
     </ThemeProvider>
