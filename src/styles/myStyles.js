@@ -267,7 +267,7 @@ export const TopBottomNav = styled.div`
   gap: 2rem;
   justify-content: space-around;
   padding: 2rem;
-  font-size: 3.5rem;
+  font-size: 3rem;
 
   .nav-item {
     padding: 2rem 0;
