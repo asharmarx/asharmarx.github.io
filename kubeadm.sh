@@ -19,6 +19,7 @@ configure_firewall() {
   ufw allow 10251/tcp
   ufw allow 10252/tcp
   ufw allow 10255/tcp
+  ufw enable
   ufw reload
 }
 
@@ -99,17 +100,12 @@ setup_kubectl_config() {
 
 # Main function to call all setup functions in order
 main() {
-  disable_swap
-  configure_firewall
-  configure_containerd_network
-  
-
   # Run Kubernetes setup only if the environment variable is set
   if [[ "${SETUP_K8S:-}" == "true" ]]; then
     install_k8s_tools
-    install_cilium
     init_k8s_cluster
     setup_kubectl_config
+    install_cilium
   else
     disable_swap
     configure_firewall
