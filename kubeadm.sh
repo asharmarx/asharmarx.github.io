@@ -25,13 +25,13 @@ configure_firewall() {
 # Function to configure containerd and networking
 configure_containerd_network() {
   echo "CONTAINERD AND NETWORK STUFF"
-  cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf 
+  cat <<EOF | tee /etc/modules-load.d/containerd.conf 
 overlay 
 br_netfilter
 EOF
   modprobe overlay
   modprobe br_netfilter
-  cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-k8s.conf
+  cat <<EOF | tee /etc/sysctl.d/99-kubernetes-k8s.conf
 net.bridge.bridge-nf-call-iptables = 1
 net.ipv4.ip_forward = 1
 net.bridge.bridge-nf-call-ip6tables = 1
